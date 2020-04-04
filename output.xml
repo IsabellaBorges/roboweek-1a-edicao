@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20200401 15:45:37.339" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<robot rpa="false" generated="20200403 16:18:26.892" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
 <suite source="C:\roboweek\roboweek-1a-edicao\tests\cadastro.robot" id="s1" name="Cadastro">
 <test id="s1-t1" name="Cadastrar novo jogo">
 <kw name="Dado que eu acesso o portal de casdastro de jogos">
@@ -9,122 +9,104 @@
 <arg>http:localhost:3000</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200401 15:45:37.699" level="INFO">Opening browser 'chrome' to base url 'http:localhost:3000'.</msg>
-<status status="PASS" endtime="20200401 15:45:44.021" starttime="20200401 15:45:37.699"></status>
+<msg timestamp="20200403 16:18:27.368" level="INFO">Opening browser 'chrome' to base url 'http:localhost:3000'.</msg>
+<status status="PASS" endtime="20200403 16:18:34.410" starttime="20200403 16:18:27.368"></status>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>5</arg>
 </arguments>
-<status status="PASS" endtime="20200401 15:45:44.029" starttime="20200401 15:45:44.021"></status>
+<status status="PASS" endtime="20200403 16:18:34.414" starttime="20200403 16:18:34.410"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>/produtos/new</arg>
 </arguments>
-<msg timestamp="20200401 15:45:44.029" level="INFO">Clicking link '/produtos/new'.</msg>
-<status status="PASS" endtime="20200401 15:45:44.261" starttime="20200401 15:45:44.029"></status>
+<msg timestamp="20200403 16:18:34.414" level="INFO">Clicking link '/produtos/new'.</msg>
+<status status="PASS" endtime="20200403 16:18:34.746" starttime="20200403 16:18:34.414"></status>
 </kw>
-<status status="PASS" endtime="20200401 15:45:44.261" starttime="20200401 15:45:37.699"></status>
+<status status="PASS" endtime="20200403 16:18:34.746" starttime="20200403 16:18:27.364"></status>
 </kw>
 <kw name="Quando eu faço o cadastro de um novo jogo">
+<arguments>
+<arg>Pitfaal</arg>
+<arg>Aventura na selva</arg>
+<arg>19.99</arg>
+<arg>10</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>id:produto_nome</arg>
-<arg>Call of Dut Black Ops</arg>
+<arg>${nome}</arg>
 </arguments>
-<msg timestamp="20200401 15:45:44.265" level="INFO">Typing text 'Call of Dut Black Ops' into text field 'id:produto_nome'.</msg>
-<status status="PASS" endtime="20200401 15:45:44.785" starttime="20200401 15:45:44.265"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:produto_descricao</arg>
-<arg>Um jogo de primeira pessoa, muito bacana.</arg>
-</arguments>
-<msg timestamp="20200401 15:45:44.789" level="INFO">Typing text 'Um jogo de primeira pessoa, muito bacana.' into text field 'id:produto_descricao'.</msg>
-<status status="PASS" endtime="20200401 15:45:45.153" starttime="20200401 15:45:44.785"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:produto_preco</arg>
-<arg>99.99</arg>
-</arguments>
-<msg timestamp="20200401 15:45:45.153" level="INFO">Typing text '99.99' into text field 'id:produto_preco'.</msg>
-<status status="PASS" endtime="20200401 15:45:45.285" starttime="20200401 15:45:45.153"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:produto_quantidade</arg>
-<arg>10</arg>
-</arguments>
-<msg timestamp="20200401 15:45:45.285" level="INFO">Typing text '10' into text field 'id:produto_quantidade'.</msg>
-<status status="PASS" endtime="20200401 15:45:45.425" starttime="20200401 15:45:45.285"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://input[@value='Criar Produto']</arg>
-</arguments>
-<msg timestamp="20200401 15:45:45.429" level="INFO">Clicking element 'xpath://input[@value='Criar Produto']'.</msg>
-<status status="PASS" endtime="20200401 15:45:46.025" starttime="20200401 15:45:45.425"></status>
-</kw>
-<status status="PASS" endtime="20200401 15:45:46.025" starttime="20200401 15:45:44.265"></status>
-</kw>
-<kw name="Então a mensagem de sucesso &quot;Produto cadastrado com sucesso&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>css:div[role=alert]</arg>
-<arg>${mensagem_esperada}.</arg>
-</arguments>
-<msg timestamp="20200401 15:45:46.065" level="INFO">Element 'css:div[role=alert]' contains text 'Produto cadastrado com sucesso.'.</msg>
-<status status="PASS" endtime="20200401 15:45:46.069" starttime="20200401 15:45:46.029"></status>
-</kw>
-<status status="PASS" endtime="20200401 15:45:46.069" starttime="20200401 15:45:46.025"></status>
-</kw>
-<kw name="E vejo este novo jogo na lista">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>css:table tbody</arg>
-<arg>Call of Dut Black Ops Um jogo de primeira pessoa, muito bacana. R$ 99.99 10</arg>
-</arguments>
-<msg timestamp="20200401 15:45:46.145" level="INFO">Element 'css:table tbody' contains text 'Call of Dut Black Ops Um jogo de primeira pessoa, muito bacana. R$ 99.99 10'.</msg>
-<status status="PASS" endtime="20200401 15:45:46.145" starttime="20200401 15:45:46.069"></status>
-</kw>
+<msg timestamp="20200403 16:18:34.754" level="INFO">Typing text 'Pitfaal' into text field 'id:produto_nome'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200401 15:45:46.444" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20200401 15:45:46.444" starttime="20200401 15:45:46.145"></status>
+<msg timestamp="20200403 16:18:35.238" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.162)
+</msg>
+<status status="FAIL" endtime="20200403 16:18:35.238" starttime="20200403 16:18:35.224"></status>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20200401 15:45:48.992" starttime="20200401 15:45:46.448"></status>
+<msg timestamp="20200403 16:18:35.238" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.162)
+</msg>
+<msg timestamp="20200403 16:18:35.266" level="FAIL">Element with locator 'id:produto_nome' not found.</msg>
+<status status="FAIL" endtime="20200403 16:18:35.266" starttime="20200403 16:18:34.750"></status>
 </kw>
-<status status="PASS" endtime="20200401 15:45:48.992" starttime="20200401 15:45:46.069"></status>
+<status status="FAIL" endtime="20200403 16:18:35.266" starttime="20200403 16:18:34.750"></status>
 </kw>
-<status status="PASS" endtime="20200401 15:45:48.992" critical="yes" starttime="20200401 15:45:37.695"></status>
+<status status="FAIL" endtime="20200403 16:18:35.278" critical="yes" starttime="20200403 16:18:27.364">Element with locator 'id:produto_nome' not found.</status>
+</test>
+<test id="s1-t2" name="Nome deve ser obrigatório">
+<kw name="Dado que acesso o portad de cadastro de jogos">
+<msg timestamp="20200403 16:18:35.328" level="FAIL">No keyword with name 'Dado que acesso o portad de cadastro de jogos' found. Did you mean:
+    Dado Que Eu Acesso O Portal De Casdastro De Jogos</msg>
+<status status="FAIL" endtime="20200403 16:18:35.328" starttime="20200403 16:18:35.328"></status>
+</kw>
+<status status="FAIL" endtime="20200403 16:18:35.340" critical="yes" starttime="20200403 16:18:35.312">No keyword with name 'Dado que acesso o portad de cadastro de jogos' found. Did you mean:
+    Dado Que Eu Acesso O Portal De Casdastro De Jogos</status>
+</test>
+<test id="s1-t3" name="Preço deve ser obrigatório">
+<kw name="Dado que acesso o portal de cadastro de jogos">
+<msg timestamp="20200403 16:18:35.364" level="FAIL">No keyword with name 'Dado que acesso o portal de cadastro de jogos' found. Did you mean:
+    Dado Que Eu Acesso O Portal De Casdastro De Jogos</msg>
+<status status="FAIL" endtime="20200403 16:18:35.364" starttime="20200403 16:18:35.364"></status>
+</kw>
+<status status="FAIL" endtime="20200403 16:18:35.364" critical="yes" starttime="20200403 16:18:35.348">No keyword with name 'Dado que acesso o portal de cadastro de jogos' found. Did you mean:
+    Dado Que Eu Acesso O Portal De Casdastro De Jogos</status>
+</test>
+<test id="s1-t4" name="Quantidade deve ser obrigatório">
+<kw name="Dado que acesso o portad de cadastro de jogos">
+<msg timestamp="20200403 16:18:35.386" level="FAIL">No keyword with name 'Dado que acesso o portad de cadastro de jogos' found. Did you mean:
+    Dado Que Eu Acesso O Portal De Casdastro De Jogos</msg>
+<status status="FAIL" endtime="20200403 16:18:35.386" starttime="20200403 16:18:35.386"></status>
+</kw>
+<status status="FAIL" endtime="20200403 16:18:35.390" critical="yes" starttime="20200403 16:18:35.374">No keyword with name 'Dado que acesso o portad de cadastro de jogos' found. Did you mean:
+    Dado Que Eu Acesso O Portal De Casdastro De Jogos</status>
 </test>
 <doc>Cadastro de jogos</doc>
-<status status="PASS" endtime="20200401 15:45:49.004" starttime="20200401 15:45:37.339"></status>
+<status status="FAIL" endtime="20200403 16:18:35.398" starttime="20200403 16:18:26.896"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="4" pass="0">Critical Tests</stat>
+<stat fail="4" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Cadastro" pass="1">Cadastro</stat>
+<stat fail="4" id="s1" name="Cadastro" pass="0">Cadastro</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20200403 16:18:35.238" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.162)
+</msg>
 </errors>
 </robot>

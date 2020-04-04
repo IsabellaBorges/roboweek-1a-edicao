@@ -2,45 +2,48 @@
 ***Settings***
 Documentation    Cadastro de jogos 
 
-Library     SeleniumLibrary
+Resource        resources/keywords.robot
 
 # BDD (Desenvolvimento guiado por comportamento)
+
+Suite Setup         Inicia Sessao
+Suite Teardown      Encerra Sessao
+Test Teardown       Depois do Teste 
+
 
 ***Test Cases *** 
 Cadastrar novo jogo 
 
-    Dado que eu acesso o portal de casdastro de jogos 
+    Dado Que Eu Acesso O Portal De Cadastro De Jogos
     Quando eu faço o cadastro de um novo jogo
+    ...  Pitfaal    Aventura na selva   19.99   10
     Então a mensagem de sucesso "Produto cadastrado com sucesso"
     E vejo este novo jogo na lista
 
+Nome deve ser obrigatório
+
+    Dado Que Eu Acesso O Portal De Cadastro De Jogos
+    Quando eu faço o cadastro de um novo jogo
+     ...  ${EMPTY}    Aventura na selva   19.99   10
+    Então devo ver a mensagem de alerta "Nome não pode ficar em branco"
+
+Preço deve ser obrigatório
+
+    Dado Que Eu Acesso O Portal De Cadastro De Jogos
+    Quando eu faço o cadastro de um novo jogo
+     ...  Pitfaal    Aventura na selva   ${EMPTY}    10
+    Então devo ver a mensagem de alerta "Preço não pode ficar em branco"
+
+Quantidade deve ser obrigatório
+
+    Dado Que Eu Acesso O Portal De Cadastro De Jogos 
+    Quando eu faço o cadastro de um novo jogo
+    ...  Pitfaal    Aventura na selva   19.99   ${EMPTY} 
+    Então devo ver a mensagem de alerta "Quantidade não pode ficar em branco"
        
-***Keywords ***
-Dado que eu acesso o portal de casdastro de jogos 
 
-    Open Browser        http:localhost:3000         chrome 
-    Set Selenium Implicit Wait  5
-    Click Link          /produtos/new
-
-Quando eu faço o cadastro de um novo jogo
+   
     
-    Input Text          id:produto_nome             Call of Dut Black Ops
-    Input Text          id:produto_descricao        Um jogo de primeira pessoa, muito bacana.                                   
-    Input Text          id:produto_preco            99.99
-    Input Text          id:produto_quantidade       10
-    Click Element       xpath://input[@value='Criar Produto']
- 
-
-Então a mensagem de sucesso "${mensagem_esperada}"
-    
-    Element Should Contain          css:div[role=alert]     ${mensagem_esperada}.
-
-E vejo este novo jogo na lista
-
-    Element Should Contain          css:table tbody         Call of Dut Black Ops Um jogo de primeira pessoa, muito bacana. R$ 99.99 10
-
-    Capture Page Screenshot
-    Close Browser
 
 
 
